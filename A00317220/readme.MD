@@ -4,7 +4,7 @@
 ### Estudiantes: 
 **Jorge Hernandez - A00317220**
 
-**URL de github: //github.com/GeorgeArturo/so-exam2 **
+**URL de github: //github.com/GeorgeArturo/so-exam2**
 
 ### Procedimiento
 
