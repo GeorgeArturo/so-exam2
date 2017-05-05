@@ -4,6 +4,8 @@
 ### Estudiantes: 
 **Jorge Hernandez - A00317220**
 
+**URL de github: //github.com/GeorgeArturo/so-exam2 **
+
 ### Procedimiento
 
 * Lo primero que se realizo fue el script que me de los datos que requiero de la CPU, para esto se uso el siguiente Script
@@ -159,3 +161,11 @@ crontab -u check_user -e
 
 
 ![GitHub Logo0](Imagenes/save.png)
+
+
+* Ya con esto nos aseguramos que el script se ejecute cada 60 segundos
+
+* A continuación se muestra la documentación de la aplicación hecha en swagger
+
+![GitHub Logo0](Imagenes/swagger1.png)
+![GitHub Logo0](Imagenes/swagger2.png)
