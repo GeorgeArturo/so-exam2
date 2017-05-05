@@ -10,7 +10,7 @@ def memoria():
 
 def get_cpu():
   df_process = Popen(["mpstat"], stdout=PIPE, stderr=PIPE)
-  awk_process = Popen(["awk", '{print $3}'], stdin=df_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')	  
+  awk_process = Popen(["awk", '{print $4}'], stdin=df_process.stdout, stdout=PIPE, stderr=PIPE).communicate()[0].split('\n')	  
 
   return filter(None, awk_process)
 
