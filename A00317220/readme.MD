@@ -92,6 +92,57 @@ if __name__=="__main__":
   app.run(host='0.0.0.0', port=8080, debug='True')
 
 ```
-* imagen
+* prueba de funcionamiento
 
 ![GitHub Logo0](Imagenes/func.png)
+
+
+
+* A continuación procedio a guardarse esta información en una base de datos, para eso primero se creo el modelo de la base de datos con el siguiente script:
+
+``` python
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/check_user/envs/prueba.db'
+db = SQLAlchemy(app)
+
+
+class Datos(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    consumoCpu = db.Column(db.String(80), nullable=False)
+    consumoRam = db.Column(db.String(120), nullable=False)
+    espacioDisco = db.Column(db.String(120), nullable=False)
+    service = db.Column(db.String(120), nullable=False)
+
+
+    def __init__(self,consumoCpu,consumoRam, espacioDisco, service):
+        self.consumoCpu = consumoCpu
+        self.consumoRam = consumoRam
+        self.espacioDisco = espacioDisco
+        self.service = service
+
+    def __repr__(self):
+	informacion = self.consumoCpu +" " + self.consumoRam + " " + self.espacioDisco+ " " + self.service
+
+        return '<informacion %r>' % informacion
+```
+
+* una vez teniendo el modelo lo siguiente que se hizo fue crear el script que guardara la información en este modelo:
+
+``` python
+from modelo import db
+from modelo import Datos
+from logica import memoria, get_espacioDisco, get_cpu, getEstado
+
+db.create_all()
+
+datos = Datos(get_cpu()[2],memoria()[0],get_espacioDisco()[1],getEstado()[0] )
+
+db.session.add(datos)
+db.session.commit()
+
+var=Datos.query.all()
+print(var)
+```
