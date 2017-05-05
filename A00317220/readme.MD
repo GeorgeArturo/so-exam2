@@ -157,7 +157,5 @@ crontab -u check_user -e
 ```
 * despues de ejecutar este comando nos llevara a un archivo donde debemos poner lo siguiente
 
-`` python
- * * * * * python ~/envs/all.py
 
-```
+![GitHub Logo0](Imagenes/save.png)
