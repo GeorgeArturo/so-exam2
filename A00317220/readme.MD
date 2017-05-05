@@ -8,7 +8,7 @@
 
 ### Procedimiento
 
-* Lo primero que se realizo fue el script que me de los datos que requiero de la CPU, para esto se uso el siguiente Script
+* Lo primero que se realizo fue el script que me de los datos requeridos, para esto se uso el siguiente Script
 
 ``` python
 from subprocess import Popen, PIPE
