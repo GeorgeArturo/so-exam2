@@ -146,3 +146,18 @@ db.session.commit()
 var=Datos.query.all()
 print(var)
 ```
+* se muestra una prueba de funcionamiento :
+
+![GitHub Logo0](Imagenes/baseDatos.png)
+
+* Un requerimiento del problema nos pedia que la base de datos se refrescara cada 60 segundos para se uso el crontab de la siguiente manera
+
+``` python
+crontab -u check_user -e
+```
+* despues de ejecutar este comando nos llevara a un archivo donde debemos poner lo siguiente
+
+`` python
+ * * * * * python ~/envs/all.py
+
+```
